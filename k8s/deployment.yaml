@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: nginxmiami
-        image: peckma/pythonmoment
+        image: peckma/pythonmoment:90
         ports:
         - containerPort: 8080
