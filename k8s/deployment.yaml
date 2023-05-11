@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: peckpython
+  name: nginx-deployment
 spec:
   selector:
     matchLabels:
-      app: myapp
-  replicas: 1
+      app: nginx
+  replicas: 3
   template:
     metadata:
       labels:
-        app: myapp
+        app: nginx
     spec:
       containers:
-      - name: nginxmiami
-        image: peckma/pythonmoment:90
+      - name: nginx
+        image: DockerHub/nginx:latest
         ports:
-        - containerPort: 8080
+        - containerPort: 80
