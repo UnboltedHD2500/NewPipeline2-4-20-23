@@ -2,13 +2,11 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx-deployment
-pool:
-  name: 'Azure Pipeline'
 spec:
+  replicas: 3
   selector:
     matchLabels:
       app: nginx
-  replicas: 3
   template:
     metadata:
       labels:
@@ -16,6 +14,6 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: DockerHub/nginx:latest
+        image: nginx:1.17.10
         ports:
         - containerPort: 80
