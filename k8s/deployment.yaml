@@ -2,11 +2,12 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx-deployment
+pool:
+  name: 'Azure Pipeline'
 spec:
   selector:
     matchLabels:
       app: nginx
-      pool: Azure Pipeline
   replicas: 3
   template:
     metadata:
